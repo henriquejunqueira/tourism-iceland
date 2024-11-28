@@ -1,0 +1,140 @@
+:root {
+  --blue: #a3dff7;
+  --green: #92c48e;
+  --gray: #4b4b4b;
+  --white: #f9f9f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: var(--green);
+}
+
+nav a,
+.navbar-brand {
+  color: var(--white) !important;
+  font-weight: 400;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white); /* Mantém a cor do texto */
+  padding-bottom: 5px; /* Espaço para o efeito */
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--gray);
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.carousel-inner img {
+  height: 400px;
+  object-fit: cover;
+}
+
+#carrosselImagens {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; /* Opcional: arredonda os cantos */
+}
+
+.content {
+  background-color: var(--green);
+  color: var(--gray);
+  padding: 20px;
+  text-align: justify;
+}
+
+.galery img {
+  object-fit: cover;
+
+  transition: transform 0.3s ease-in-out; /* Transição suave ao aplicar o zoom */
+}
+
+.gallery img:hover {
+  transform: scale(1.1); /* Aplica o zoom (aumenta em 10%) */
+}
+
+.img-fluid {
+  width: 263px;
+  height: 445px;
+  border-radius: 8px;
+
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.6);
+
+  cursor: pointer;
+}
+
+footer {
+  background-color: var(--green);
+  color: var(--gray);
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section div {
+  margin: 10px;
+}
+
+.footer-section i {
+  margin-right: 8px;
+}
+
+.footer-section a {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--white);
+  text-decoration-thickness: 3px;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--blue); /* Cor do botão */
+  color: var(--gray);
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 18px;
+  display: none; /* Oculta o botão inicialmente */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop:hover {
+  background-color: var(--blue); /* Cor ao passar o mouse */
+}
+
+#backToTop i {
+  font-size: 20px;
+}
