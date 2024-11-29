@@ -1,140 +1,201 @@
 :root {
-  --blue: #a3dff7;
-  --green: #92c48e;
-  --gray: #4b4b4b;
-  --white: #f9f9f9;
+  /* Declaração de variáveis globais para cores */
+  --blue: #a3dff7; /* Azul claro */
+  --green: #92c48e; /* Verde claro */
+  --gray: #4b4b4b; /* Cinza escuro */
+  --white: #f9f9f9; /* Branco */
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin: 0; /* Remove margens padrão de todos os elementos */
+  padding: 0; /* Remove paddings padrão */
+  box-sizing: border-box; /* Inclui bordas e paddings no cálculo do tamanho total */
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; /* Define a fonte principal para o body */
 }
 
 nav {
-  background-color: var(--green);
+  /* Menu de navegação */
+  background-color: var(--green); /* Fundo verde */
+  display: flex; /* Exibe os itens em linha */
+  justify-content: space-between; /* Espaça os elementos */
+  align-items: center; /* Alinha verticalmente ao centro */
+  padding: 10px 20px; /* Espaçamento interno */
 }
 
 nav a,
 .navbar-brand {
-  color: var(--white) !important;
-  font-weight: 400;
+  /* Estilização dos links e do logo */
+  color: var(--white) !important; /* Cor branca */
+  font-weight: 400; /* Peso médio da fonte */
+  text-decoration: none; /* Remove sublinhado */
+}
+
+.navbar-nav {
+  /* Lista de navegação */
+  display: flex; /* Alinha os links horizontalmente */
+  gap: 15px; /* Espaçamento entre links */
 }
 
 .navbar-nav .nav-link {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-  color: var(--white); /* Mantém a cor do texto */
-  padding-bottom: 5px; /* Espaço para o efeito */
+  /* Links da barra de navegação */
+  position: relative; /* Necessário para o pseudo-elemento ::after */
+  padding-bottom: 5px; /* Espaço para o sublinhado animado */
+  color: var(--white); /* Cor branca */
 }
 
 .navbar-nav .nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--gray);
-  transition: width 0.3s ease-in-out;
+  /* Efeito de hover animado */
+  content: ''; /* Elemento vazio */
+  position: absolute; /* Posicionamento relativo ao link */
+  left: 0; /* Início à esquerda */
+  bottom: 0; /* Base do link */
+  width: 0; /* Largura inicial zero */
+  height: 2px; /* Altura do sublinhado */
+  background-color: var(--gray); /* Cor do sublinhado */
+  transition: width 0.3s ease-in-out; /* Animação suave */
 }
 
 .navbar-nav .nav-link:hover::after {
-  width: 100%;
+  /* Expansão do sublinhado no hover */
+  width: 100%; /* Preenche toda a largura */
+}
+
+.carousel-inner {
+  /* Container do carrossel */
+  display: flex; /* Layout de carrossel em linha */
+  overflow: hidden; /* Oculta o conteúdo fora do container */
 }
 
 .carousel-inner img {
-  height: 400px;
-  object-fit: cover;
+  /* Imagens do carrossel */
+  flex-shrink: 0; /* Não permite encolher */
+  height: 400px; /* Altura fixa */
+  object-fit: cover; /* Ajuste para cobrir o espaço */
 }
 
 #carrosselImagens {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 8px; /* Opcional: arredonda os cantos */
+  /* Estilo geral do carrossel */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra ao redor */
+  border-radius: 8px; /* Cantos arredondados */
 }
 
 .content {
-  background-color: var(--green);
-  color: var(--gray);
-  padding: 20px;
-  text-align: justify;
+  /* Seção principal de conteúdo */
+  background-color: var(--green); /* Fundo verde */
+  padding: 20px; /* Espaçamento interno */
+  display: flex; /* Flex container */
+  flex-direction: column; /* Alinha os elementos verticalmente */
+  gap: 15px; /* Espaçamento entre itens */
 }
 
-.galery img {
-  object-fit: cover;
+.content p {
+  /* Estilo dos parágrafos */
+  text-align: justify; /* Justifica o texto */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra no texto */
+  color: var(--gray); /* Texto cinza */
+}
 
-  transition: transform 0.3s ease-in-out; /* Transição suave ao aplicar o zoom */
+.content h4,
+.gallery h4 {
+  /* Títulos da seção e galeria */
+  text-align: center; /* Centraliza o texto */
+  color: var(--gray); /* Cor cinza */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+}
+
+.gallery {
+  /* Galeria de imagens */
+  display: flex; /* Layout em linha */
+  gap: 10px; /* Espaçamento entre as imagens */
+  flex-wrap: wrap; /* Permite quebras de linha */
+  justify-content: center; /* Centraliza o conteúdo */
+}
+
+.gallery img {
+  /* Imagens da galeria */
+  object-fit: cover; /* Ajusta a proporção */
+  transition: transform 0.3s ease-in-out; /* Efeito de zoom suave */
 }
 
 .gallery img:hover {
-  transform: scale(1.1); /* Aplica o zoom (aumenta em 10%) */
+  /* Efeito de zoom */
+  transform: scale(1.1); /* Aumenta 10% */
 }
 
 .img-fluid {
-  width: 263px;
-  height: 445px;
-  border-radius: 8px;
-
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.6);
-
-  cursor: pointer;
+  /* Estiliza imagens responsivas */
+  width: 263px; /* Largura fixa */
+  height: 445px; /* Altura fixa */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.6); /* Adiciona sombra */
+  cursor: pointer; /* Exibe ponteiro de clique */
 }
 
 footer {
-  background-color: var(--green);
-  color: var(--gray);
-  padding: 20px;
-  text-align: center;
+  /* Estiliza o rodapé */
+  background-color: var(--green); /* Cor de fundo */
+  color: var(--gray); /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
 }
 
 .footer-section {
-  display: flex;
-  justify-content: space-around;
+  /* Layout do rodapé */
+  display: flex; /* Exibe elementos em linha */
+  justify-content: space-around; /* Distribui espaço uniformemente */
 }
 
 .footer-section div {
-  margin: 10px;
+  /* Estiliza os elementos dentro do rodapé */
+  margin: 10px; /* Espaçamento ao redor */
 }
 
 .footer-section i {
-  margin-right: 8px;
+  /* Estiliza ícones no rodapé */
+  display: flex; /* Exibe elementos em linha */
+  align-items: center; /* Alinha os itens ao centro */
+  justify-content: space-around; /* Distribui espaço uniformemente */
+  flex-direction: row; /* Define a direção como linha */
 }
 
 .footer-section a {
-  color: var(--gray);
-  text-decoration: none;
+  /* Estiliza links do rodapé */
+  color: var(--gray); /* Cor do link */
+  text-decoration: none; /* Remove sublinhado */
 }
 
 .footer-section a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--white);
-  text-decoration-thickness: 3px;
+  /* Estiliza o hover dos links */
+  text-decoration: underline; /* Adiciona sublinhado */
+  text-decoration-color: var(--white); /* Cor branca no sublinhado */
+  text-decoration-thickness: 3px; /* Aumenta a espessura */
 }
 
 #backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--blue); /* Cor do botão */
-  color: var(--gray);
-  border: none;
-  border-radius: 50%;
-  padding: 15px;
-  font-size: 18px;
-  display: none; /* Oculta o botão inicialmente */
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Botão voltar ao topo */
+  position: fixed; /* Fixa na tela */
+  bottom: 20px; /* Distância da base */
+  right: 20px; /* Distância lateral */
+  background-color: var(--blue); /* Fundo azul */
+  color: var(--gray); /* Texto cinza */
+  border: none; /* Remove bordas */
+  border-radius: 50%; /* Forma arredondada */
+  padding: 15px; /* Espaçamento interno */
+  font-size: 18px; /* Tamanho do texto */
+  display: none; /* Inicialmente invisível */
+  cursor: pointer; /* Exibe cursor de clique */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
 }
 
 #backToTop:hover {
-  background-color: var(--blue); /* Cor ao passar o mouse */
+  /* Hover no botão voltar ao topo */
+  background-color: var(--blue); /* Mantém a cor */
 }
 
 #backToTop i {
-  font-size: 20px;
+  /* Ícone dentro do botão */
+  font-size: 20px; /* Tamanho do ícone */
 }
