@@ -23,3 +23,17 @@ window.onscroll = function () {
 document.getElementById('backToTop').onclick = function () {
   window.scrollTo({ top: 0, behavior: 'smooth' }); // Rola suavemente até o topo
 };
+
+// Evento de fechar o menu
+let navbarToggler = document.getElementById('botaoMenu');
+let navbarCollapse = document.getElementById('navbarNav');
+
+// Verifica quando a navbar é fechada
+navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+  navbarToggler.setAttribute('aria-expanded', 'false'); // Garantir que o estado é "fechado"
+});
+
+// Verifica quando a navbar é aberta
+navbarCollapse.addEventListener('show.bs.collapse', function () {
+  navbarToggler.setAttribute('aria-expanded', 'true'); // Garantir que o estado é "aberto"
+});
